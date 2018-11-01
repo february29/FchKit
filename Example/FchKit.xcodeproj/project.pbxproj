@@ -29,11 +29,11 @@
 
 /* Begin PBXFileReference section */
 		22AD0EF58452A710DD8DE3BF /* Pods-FchKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FchKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FchKit_Tests/Pods-FchKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		29C06864630863FEF0518B1D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		29C06864630863FEF0518B1D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		2AB41A9A9297F5EFCBCF97D7 /* Pods_FchKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FchKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		539EE7585E74348B26D19828 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		539EE7585E74348B26D19828 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		5D0954722FFC01EDD9816200 /* Pods_FchKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FchKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D2DB93EAE1AD64F56BDBE51 /* FchKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = FchKit.podspec; path = ../FchKit.podspec; sourceTree = "<group>"; };
+		5D2DB93EAE1AD64F56BDBE51 /* FchKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = FchKit.podspec; path = ../FchKit.podspec; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* FchKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FchKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -315,12 +315,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FchKit_Example/Pods-FchKit_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FchKit/FchKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FchKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

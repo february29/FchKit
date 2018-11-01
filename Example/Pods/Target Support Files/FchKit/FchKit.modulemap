@@ -1,0 +1,6 @@
+framework module FchKit {
+  umbrella header "FchKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
