@@ -1,5 +1,5 @@
 PODS:
-  - FchKit (0.1.0):
+  - FchKit (0.1.1):
     - SnapKit
   - SnapKit (4.0.1)
 
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  FchKit: 68168c86f3c524fd1fd503387abc20679e5d676b
+  FchKit: 41372fad92d9f17fb3396ac8a3fb2b2349bbbc7d
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
 
 PODFILE CHECKSUM: b7ed3267ba59f5600d352148df392fb224fb6dc4
