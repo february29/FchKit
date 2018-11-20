@@ -36,6 +36,16 @@ class BBaseViewController: UIViewController {
     }
     
     
+    /// 显示系统进度条
+    ///
+    /// - Parameters:
+    ///   - title: 标题
+    ///   - message: 信息
+    ///   - preferredStyle: 样式 默认alert
+    ///   - cancleTitle: 取消按钮 默认"取消"
+    ///   - okTitle: 确定按钮 默认"确定"
+    ///   - cancleHandler: 取消回调 默认空
+    ///   - OkHandler: 确定回调 默认空
     func showAlert(title: String?, message: String?, preferredStyle: UIAlertControllerStyle? = .alert,cancleTitle: String? = "取消",okTitle: String? = "确定", cancleHandler:BBaseHandler? = nil,OkHandler:BBaseHandler? = nil) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: preferredStyle ?? UIAlertControllerStyle.alert );
         
