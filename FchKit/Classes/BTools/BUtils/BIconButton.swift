@@ -8,10 +8,10 @@
 import UIKit
 import SnapKit
 
-class BIconButton: UIView {
+public class BIconButton: UIView {
     
     
-    typealias ClickBlcok = (_ sender:UIView)->()
+    public typealias ClickBlcok = (_ sender:UIView)->()
     
     
     public var clickBlock:ClickBlcok?
@@ -28,10 +28,10 @@ class BIconButton: UIView {
     }
     
     
-    var iconImageView:UIImageView = UIImageView();
-    var lable:UILabel = UILabel();
-    var redCountLable = UILabel();
-    var coverBtn = UIButton();
+    public var iconImageView:UIImageView = UIImageView();
+    public var lable:UILabel = UILabel();
+    public var redCountLable = UILabel();
+    public var coverBtn = UIButton();
     
     
 

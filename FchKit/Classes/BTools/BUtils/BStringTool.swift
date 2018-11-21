@@ -7,12 +7,12 @@
 
 import UIKit
 
-class BStringTool {
+public class BStringTool {
     
     static let sharedInstance = BStringTool();
     private init() { };
     
-    class func trimNil(str:String?) -> String{
+     class public func trimNil(str:String?) -> String{
         return str == nil ? "":str!;
     }
 

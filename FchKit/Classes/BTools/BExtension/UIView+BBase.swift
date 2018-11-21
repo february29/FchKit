@@ -10,7 +10,93 @@ import UIKit
 
 extension UIView{
     
-    func b_clipRectCorner(direction:UIRectCorner,cornerRadius:CGFloat) {
+    
+    
+    /// x
+    public var x: CGFloat {
+        get {
+            return frame.origin.x
+        }
+        set(newValue) {
+            var tempFrame: CGRect = frame
+            tempFrame.origin.x    = newValue
+            frame                 = tempFrame
+        }
+    }
+    
+    /// y
+    public var y: CGFloat {
+        get {
+            return frame.origin.y
+        }
+        set(newValue) {
+            var tempFrame: CGRect = frame
+            tempFrame.origin.y    = newValue
+            frame                 = tempFrame
+        }
+    }
+    
+    /// height
+    public var height: CGFloat {
+        get {
+            return frame.size.height
+        }
+        set(newValue) {
+            var tempFrame: CGRect = frame
+            tempFrame.size.height = newValue
+            frame                 = tempFrame
+        }
+    }
+    
+    /// width
+    public var width: CGFloat {
+        get {
+            return frame.size.width
+        }
+        set(newValue) {
+            var tempFrame: CGRect = frame
+            tempFrame.size.width = newValue
+            frame = tempFrame
+        }
+    }
+    
+    /// size
+    public var size: CGSize {
+        get {
+            return frame.size
+        }
+        set(newValue) {
+            var tempFrame: CGRect = frame
+            tempFrame.size = newValue
+            frame = tempFrame
+        }
+    }
+    
+    /// centerX
+    public var centerX: CGFloat {
+        get {
+            return center.x
+        }
+        set(newValue) {
+            var tempCenter: CGPoint = center
+            tempCenter.x = newValue
+            center = tempCenter
+        }
+    }
+    
+    /// centerY
+    public var centerY: CGFloat {
+        get {
+            return center.y
+        }
+        set(newValue) {
+            var tempCenter: CGPoint = center
+            tempCenter.y = newValue
+            center = tempCenter;
+        }
+    }
+    
+    public func b_clipRectCorner(direction:UIRectCorner,cornerRadius:CGFloat) {
         let cornerSize = CGSize(width: cornerRadius, height: cornerRadius);
         let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: direction, cornerRadii: cornerSize);
         let maskLayer = CAShapeLayer();
@@ -23,93 +109,8 @@ extension UIView{
         
     }
     
-    /// x
-    var x: CGFloat {
-        get {
-            return frame.origin.x
-        }
-        set(newValue) {
-            var tempFrame: CGRect = frame
-            tempFrame.origin.x    = newValue
-            frame                 = tempFrame
-        }
-    }
-    
-    /// y
-    var y: CGFloat {
-        get {
-            return frame.origin.y
-        }
-        set(newValue) {
-            var tempFrame: CGRect = frame
-            tempFrame.origin.y    = newValue
-            frame                 = tempFrame
-        }
-    }
-    
-    /// height
-    var height: CGFloat {
-        get {
-            return frame.size.height
-        }
-        set(newValue) {
-            var tempFrame: CGRect = frame
-            tempFrame.size.height = newValue
-            frame                 = tempFrame
-        }
-    }
-    
-    /// width
-    var width: CGFloat {
-        get {
-            return frame.size.width
-        }
-        set(newValue) {
-            var tempFrame: CGRect = frame
-            tempFrame.size.width = newValue
-            frame = tempFrame
-        }
-    }
-    
-    /// size
-    var size: CGSize {
-        get {
-            return frame.size
-        }
-        set(newValue) {
-            var tempFrame: CGRect = frame
-            tempFrame.size = newValue
-            frame = tempFrame
-        }
-    }
-    
-    /// centerX
-    var centerX: CGFloat {
-        get {
-            return center.x
-        }
-        set(newValue) {
-            var tempCenter: CGPoint = center
-            tempCenter.x = newValue
-            center = tempCenter
-        }
-    }
-    
-    /// centerY
-    var centerY: CGFloat {
-        get {
-            return center.y
-        }
-        set(newValue) {
-            var tempCenter: CGPoint = center
-            tempCenter.y = newValue
-            center = tempCenter;
-        }
-    }
-    
-    
     //抖动动画
-    func b_shark() {
+    public func b_shark() {
         // 获取到当前的View
         let viewLayer = self.layer
         
@@ -138,7 +139,7 @@ extension UIView{
         
         // 设置运动形式
         
-        animation.timingFunction = CAMediaTimingFunction.init(name:"default" )
+        animation.timingFunction = CAMediaTimingFunction.init(name:CAMediaTimingFunctionName(rawValue: "default") )
 //        [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault]];
         
         // 设置开始位置

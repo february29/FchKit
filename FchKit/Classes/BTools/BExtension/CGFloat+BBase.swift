@@ -86,15 +86,15 @@ extension CGFloat {
 
 extension CGFloat{
    
-    var k:CGFloat{
+    public var k:CGFloat{
         return self / 1024;
     }
     
-    var m:CGFloat{
+    public var m:CGFloat{
         return self / (1024 * 1024);
     }
     
-    func toSizeString() -> String {
+    public func toSizeString() -> String {
         
         if self >= (1024 * 1024) {
             return  String(format: "%.2fMB", self.m);

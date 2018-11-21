@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BAutoWidthScrollView: UIScrollView {
+public class BAutoWidthScrollView: UIScrollView {
 
     let contentView = UIView();
     
@@ -26,7 +26,7 @@ class BAutoWidthScrollView: UIScrollView {
     
     
     
-    func setRightView(view:UIView,offset:Float = 0)  {
+    public func setRightView(view:UIView,offset:Float = 0)  {
         contentView.snp.remakeConstraints { (make) in
             make.edges.equalTo(self);
             make.height.equalTo(self);
@@ -36,7 +36,7 @@ class BAutoWidthScrollView: UIScrollView {
     }
     
     
-    func setwidth(width:CGFloat)  {
+    public func setwidth(width:CGFloat)  {
         contentView.snp.remakeConstraints { (make) in
             make.edges.equalTo(self);
             make.height.equalTo(self);

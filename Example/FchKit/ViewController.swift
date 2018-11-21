@@ -17,6 +17,14 @@ class ViewController: UIViewController {
         
 //        print(Date().toString())
         
+//        BDateTool.sharedInstance.timeIntervalSince1970FromDate(date: <#T##Date#>)
+        
+//        BStringTool.trimNil(str: <#T##String?#>)
+        
+    
+        BAutoHeightScrollView();
+//        BBaseConstant.
+        
     }
 
     override func didReceiveMemoryWarning() {

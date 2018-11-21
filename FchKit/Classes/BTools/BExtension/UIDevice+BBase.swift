@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UIDevice {
-    static func isIPhoneX() -> Bool {
+    public static func isIPhoneX() -> Bool {
         
 //        BIsIPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 //        UIScreen.main.currentMode?.size = CGSize(width: 1125, height: 2436);
@@ -22,7 +22,7 @@ extension UIDevice {
         return false
     }
     
-    static func versionGreatThanOrEqual(version:String) -> Bool{
+    public static func versionGreatThanOrEqual(version:String) -> Bool{
         let result =  self.current.systemVersion.compare(version);
         
         if result == .orderedAscending{

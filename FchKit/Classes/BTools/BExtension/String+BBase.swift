@@ -199,14 +199,14 @@ extension String {
 //        return String(format: hash as String)
 //    }
     
-    var toHexSring:String{
+    public var toHexSring:String{
         
         let data = self.data(using: .utf8);
         return (data?.map { String(format: "%02x", $0) }.joined(separator: ""))!
     
     }
     
-    var hexToSring:String?{
+    public var hexToSring:String?{
 
         var data = Data(capacity: self.count / 2)
         

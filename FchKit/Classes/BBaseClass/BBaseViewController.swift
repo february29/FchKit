@@ -46,8 +46,8 @@ class BBaseViewController: UIViewController {
     ///   - okTitle: 确定按钮 默认"确定"
     ///   - cancleHandler: 取消回调 默认空
     ///   - OkHandler: 确定回调 默认空
-    func showAlert(title: String?, message: String?, preferredStyle: UIAlertControllerStyle? = .alert,cancleTitle: String? = "取消",okTitle: String? = "确定", cancleHandler:BBaseHandler? = nil,OkHandler:BBaseHandler? = nil) {
-        let alertVC = UIAlertController(title: title, message: message, preferredStyle: preferredStyle ?? UIAlertControllerStyle.alert );
+    func showAlert(title: String?, message: String?, preferredStyle: UIAlertController.Style? = .alert,cancleTitle: String? = "取消",okTitle: String? = "确定", cancleHandler:BBaseHandler? = nil,OkHandler:BBaseHandler? = nil) {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: preferredStyle ?? UIAlertController.Style.alert );
         
         //取消按钮必须有
         let cancleAction = UIAlertAction(title: cancleTitle, style: .cancel, handler: { (alertVC) in

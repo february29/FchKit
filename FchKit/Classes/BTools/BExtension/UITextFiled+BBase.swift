@@ -10,13 +10,14 @@ import UIKit
 
 extension UITextField{
     
-    func addOffsetView(value:Float){
+   
+    public func addOffsetView(value:Float){
         let vOffset = UIView(frame: CGRect(x: 0, y: 0, width: CGFloat(value), height: self.frame.size.height))
         self.leftViewMode = .always
         self.leftView = vOffset
     }
     
-    func addOffsetLabel(width:Float,txt:NSMutableAttributedString) {
+    public func addOffsetLabel(width:Float,txt:NSMutableAttributedString) {
             let vOffset = UILabel(frame: CGRect(x: 0, y: 0, width: CGFloat(width), height: self.frame.size.height))
             vOffset.attributedText = txt
             self.leftViewMode = .always

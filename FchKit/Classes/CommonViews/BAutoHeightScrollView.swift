@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class BAutoHeightScrollView: UIScrollView {
+public class BAutoHeightScrollView: UIScrollView {
     
     let contentView = UIView();
     
@@ -27,7 +27,7 @@ class BAutoHeightScrollView: UIScrollView {
     
     
     
-    func setBottomView(view:UIView,offset:Float = 0)  {
+    public func setBottomView(view:UIView,offset:Float = 0)  {
         contentView.snp.remakeConstraints { (make) in
             make.edges.equalTo(self);
             make.width.equalTo(self);

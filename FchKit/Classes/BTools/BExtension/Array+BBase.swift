@@ -9,7 +9,7 @@
 import Foundation
 
 extension Array{
-    mutating func exchangeObjectAtIndex(IndexA:Int,atIndexB:Int)
+    mutating public func exchangeObjectAtIndex(IndexA:Int,atIndexB:Int)
     {
         if IndexA >= self.count || IndexA < 0{
             return
@@ -23,7 +23,7 @@ extension Array{
         self.replaceObject(obj: objB, adIndex: IndexA)
     }
     
-    mutating func replaceObject(obj:Element,adIndex:Int){
+    mutating public func replaceObject(obj:Element,adIndex:Int){
         if adIndex >= self.count || adIndex < 0{
             return
         }
@@ -31,7 +31,7 @@ extension Array{
         self.insert(obj, at: adIndex)
     }
     
-    mutating func merge(newArray:Array){
+    mutating public func merge(newArray:Array){
         for obj in newArray
         {
             self.append(obj)
