@@ -12,12 +12,14 @@ import SnapKit
 
 
 
-class BBaseViewController: UIViewController {
+open class BBaseViewController: UIViewController {
 
+    
+    public typealias BBaseHandler = ()->Void;
     
 //    var leftBtn:UIButton?;
     
-    override func viewDidLoad() {
+    override  open func viewDidLoad() {
         super.viewDidLoad()
 
         //导航条颜色
@@ -27,16 +29,16 @@ class BBaseViewController: UIViewController {
         
         //左侧按钮
 
-        let leftBtnItem = UIBarButtonItem(image: #imageLiteral(resourceName: "btn_top_back"), style: .plain, target: self, action: #selector(BBaseViewController.back));
-//        leftBtnItem.setTintColor(.navBarBtn);
-        self.navigationItem.leftBarButtonItem = leftBtnItem;
+//        let leftBtnItem = UIBarButtonItem(image: #imageLiteral(resourceName: "btn_top_back"), style: .plain, target: self, action: #selector(BBaseViewController.back));
+////        leftBtnItem.setTintColor(.navBarBtn);
+//        self.navigationItem.leftBarButtonItem = leftBtnItem;
         
         
         
     }
     
     
-    /// 显示系统进度条
+    /// 显示系统提示框
     ///
     /// - Parameters:
     ///   - title: 标题
@@ -46,7 +48,7 @@ class BBaseViewController: UIViewController {
     ///   - okTitle: 确定按钮 默认"确定"
     ///   - cancleHandler: 取消回调 默认空
     ///   - OkHandler: 确定回调 默认空
-    func showAlert(title: String?, message: String?, preferredStyle: UIAlertController.Style? = .alert,cancleTitle: String? = "取消",okTitle: String? = "确定", cancleHandler:BBaseHandler? = nil,OkHandler:BBaseHandler? = nil) {
+    public func showAlert(title: String?, message: String?, preferredStyle: UIAlertController.Style? = .alert,cancleTitle: String? = "取消",okTitle: String? = "确定", cancleHandler:BBaseHandler? = nil,OkHandler:BBaseHandler? = nil) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: preferredStyle ?? UIAlertController.Style.alert );
         
         //取消按钮必须有
@@ -69,11 +71,7 @@ class BBaseViewController: UIViewController {
     }
     
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-    }
-    
+   
     
     @objc func back() {
         if let nv = self.navigationController {

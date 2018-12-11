@@ -1,0 +1,6 @@
+framework module BAlert {
+  umbrella header "BAlert-umbrella.h"
+
+  export *
+  module * { export * }
+}

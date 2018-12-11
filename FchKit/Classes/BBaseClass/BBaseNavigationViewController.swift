@@ -8,9 +8,9 @@
 
 import UIKit
 
- class BBaseNavigationViewController: UINavigationController {
+ open class BBaseNavigationViewController: UINavigationController {
 
-    override func viewDidLoad() {
+    override  open func viewDidLoad() {
         super.viewDidLoad()
 
 //        self.navigationBar.setBarTintColor(.navBar)
@@ -19,10 +19,7 @@ import UIKit
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-    }
+   
     
 
     

@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class BAutoWidthScrollView: UIScrollView {
+open class BAutoWidthScrollView: UIScrollView {
 
-    let contentView = UIView();
+    public let contentView = UIView();
     
     override init(frame: CGRect) {
         super.init(frame: frame);
@@ -46,7 +46,7 @@ public class BAutoWidthScrollView: UIScrollView {
     
     
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

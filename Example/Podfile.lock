@@ -1,13 +1,16 @@
 PODS:
-  - FchKit (0.1.3):
+  - BAlert (0.1.2)
+  - FchKit (0.1.4):
+    - BAlert
     - SnapKit
-  - SnapKit (4.0.1)
+  - SnapKit (4.2.0)
 
 DEPENDENCIES:
   - FchKit (from `../`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - BAlert
     - SnapKit
 
 EXTERNAL SOURCES:
@@ -15,8 +18,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  FchKit: 5fb2983302a6905191c691c6082ab732935c6a4b
-  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
+  BAlert: 1be1f3586f0b70c34fa92ce9c584551d4a3b26ee
+  FchKit: 0bb15150013bdd65d508164dc95d583c753c7684
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
 PODFILE CHECKSUM: b7ed3267ba59f5600d352148df392fb224fb6dc4
 

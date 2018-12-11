@@ -24,7 +24,7 @@ let tempFolderPath = documentPath + "/temp"
 
 
 
-typealias BBaseHandler = ()->Void;
+
 
 
 func BLocalizedString(key:String) -> String{
