@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FchKit'
-  s.version          = '0.1.5'
+  s.version          = '0.1.6'
   s.summary          = 'A short description of FchKit.'
 
 # This description is used to generate tags and improve search results.
@@ -30,7 +30,19 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'FchKit/Classes/**/*'
+ s.subspec 'FchSwiftKit' do |ss|
+    ss.source_files = 'FchKit/Classes/FchSwiftKit/**/*'
+    s.swift_version = '4.2'
+  
+  end
+
+  s.subspec 'FchOCKit' do |ss|
+    ss.source_files = 'FchKit/Classes/FchOCKit/**/*'
+  
+  end
+
+
+  # s.source_files = 'FchKit/Classes/**/*'
 
   # s.resource_bundles = {
   #   'FchKit' => ['FchKit/Assets/*.png']
@@ -40,7 +52,8 @@ TODO: Add long description of the pod here.
   # s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'SnapKit'
   s.dependency 'BAlert'
-  s.swift_version = '4.2'
+  s.dependency 'AFNetworking'
+  
 
 
 end

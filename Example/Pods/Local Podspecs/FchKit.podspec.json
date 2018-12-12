@@ -1,6 +1,6 @@
 {
   "name": "FchKit",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "summary": "A short description of FchKit.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "http://10.10.1.1/git/FchKit",
@@ -13,19 +13,31 @@
   },
   "source": {
     "git": "http://10.10.1.1/git/FchKit.git",
-    "tag": "0.1.4"
+    "tag": "0.1.5"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "FchKit/Classes/**/*",
+  "swift_version": "4.2",
   "dependencies": {
     "SnapKit": [
 
     ],
     "BAlert": [
 
+    ],
+    "AFNetworking": [
+
     ]
   },
-  "swift_version": "4.2"
+  "subspecs": [
+    {
+      "name": "FchSwiftKit",
+      "source_files": "FchKit/Classes/FchSwiftKit/**/*"
+    },
+    {
+      "name": "FchOCKit",
+      "source_files": "FchKit/Classes/FchOCKit/**/*"
+    }
+  ]
 }
