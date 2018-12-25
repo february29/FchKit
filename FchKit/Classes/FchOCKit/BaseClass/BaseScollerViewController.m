@@ -7,6 +7,7 @@
 //
 
 #import "BaseScollerViewController.h"
+#import "Masonry.h"
 
 @interface BaseScollerViewController ()
 

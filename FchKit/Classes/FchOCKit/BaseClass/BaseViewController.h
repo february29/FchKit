@@ -6,16 +6,11 @@
 
 
 #import <UIKit/UIKit.h>
-#import "BNetWorkingManager.h"
-#import "BaseDefine.h"
-#import "SJTNetWorkingChangeHelper.h"
-#import "GlobleToolDefine.h"
-#import <Masonry.h>
-#import "BAlertModal.h"
 
-#import <MJRefresh.h>
-#import "BHudView.h"
-#import <MJExtension.h>
+#import "BaseDefine.h"
+
+#import "GlobleToolDefine.h"
+
 
 
 

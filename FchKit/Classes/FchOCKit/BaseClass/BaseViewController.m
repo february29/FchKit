@@ -10,9 +10,9 @@
 
 //#import <MBProgressHUD.h>
 #import "StringTool.h"
-#import "UserInfor.h"
-#import <BlocksKit+UIKit.h>
-#import <BAlertModal.h>
+
+
+
 
 
 
@@ -221,7 +221,7 @@
 
 
 
--(void)alertViewWithTitle:(NSString *)title  message:(NSString *)massage cancleBlock:(void(^)())cancleBlock okBlock:(void(^)())okBlock{
+-(void)alertViewWithTitle:(NSString *)title  message:(NSString *)massage cancleBlock:(void(^)(void))cancleBlock okBlock:(void(^)(void))okBlock{
     
     
     UIAlertController *alert  = [UIAlertController alertControllerWithTitle:title message:massage preferredStyle:UIAlertControllerStyleAlert];
@@ -270,80 +270,80 @@
 
 
 
-/**
- //判断app是否更新
-
- @param tag 最新版本时是否显示为最新版本
- */
--(void)checkAppHasNewVersionWithTag:(NSInteger ) tag{
-    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
-    NSString* requestURI=[[NSString alloc] initWithFormat:@"%@/%@",[SJTNetWorkingChangeHelper sharedInstance].BaseURL_1,@"app/detail/1"];
-    
-//    http://223.100.6.179:30001/backend/web/cadres/user/api-user-base/app-detail
-    
-    NSDictionary *par = @{
-//                          @"token":[UserInfor token],
-//                          @"id":@"0"
-                          };
-    
-    
-    
-    
-    
-    [[BNetWorkingManager sharedInstance]POST:requestURI paraments:par completeBlock:^(NSDictionary * _Nullable responseObject, NSError * _Nullable error) {
-        if (responseObject) {
-            
-            
-            NSLog(@"resultDic：%@",responseObject);
-//            if([[responseObject objectForKey:@"code"] intValue]  != 0){
-//                BMAKETOAST([responseObject objectForKey:@"msg"]);
+///**
+// //判断app是否更新
+//
+// @param tag 最新版本时是否显示为最新版本
+// */
+//-(void)checkAppHasNewVersionWithTag:(NSInteger ) tag{
+//    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
+//    NSString* requestURI=[[NSString alloc] initWithFormat:@"%@/%@",[SJTNetWorkingChangeHelper sharedInstance].BaseURL_1,@"app/detail/1"];
+//    
+////    http://223.100.6.179:30001/backend/web/cadres/user/api-user-base/app-detail
+//    
+//    NSDictionary *par = @{
+////                          @"token":[UserInfor token],
+////                          @"id":@"0"
+//                          };
+//    
+//    
+//    
+//    
+//    
+//    [[BNetWorkingManager sharedInstance]POST:requestURI paraments:par completeBlock:^(NSDictionary * _Nullable responseObject, NSError * _Nullable error) {
+//        if (responseObject) {
+//            
+//            
+//            NSLog(@"resultDic：%@",responseObject);
+////            if([[responseObject objectForKey:@"code"] intValue]  != 0){
+////                BMAKETOAST([responseObject objectForKey:@"msg"]);
+////                return ;
+////            }
+//            
+//            NSDictionary *app = [responseObject objectForKey:@"app"];
+//            
+//            if (!app) {
 //                return ;
 //            }
-            
-            NSDictionary *app = [responseObject objectForKey:@"app"];
-            
-            if (!app) {
-                return ;
-            }
-            //正常情况
-            
-            NSString *iosUrl = [app objectForKey:@"ios_url"];
-            if([app objectForKey:@"ios_version"]==[NSNull null]){
-                return;
-            }
-            float webVersion =[[app objectForKey:@"ios_version"]floatValue];
-            
-//            NSString *new_version_info = [app objectForKey:@"new_version_info"];
-            
-            float locoalVeision = [version floatValue];
-            NSLog(@"当前版本%@ ，最新版本%f ",version,webVersion);
-            //提示更新
-            
-            if (webVersion>locoalVeision) {
-                
-                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"客户端有新版本，是否现在更新?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-
-                [alert show];
-                [alert bk_setHandler:^{
-                    //客户端更新。。。。
-                    NSLog(@"客户端更新iosUrl %@",iosUrl);
-                    UIApplication *application = [UIApplication sharedApplication];
-                    [application openURL:[NSURL URLWithString:iosUrl]];
-                } forButtonAtIndex:1];
-            }else{
-                if (tag>0) {
-                    NSString *str =  [NSString stringWithFormat:@"当前版本%.1f，最新版本%.1f，您的客户端已是最新版本！",locoalVeision,webVersion];
-                    Alert(str);
-                }else{
-                     NSLog(@"不需要更新");
-                }
-               
-            }
-        }
-    }];
-    
-    
-}
+//            //正常情况
+//            
+//            NSString *iosUrl = [app objectForKey:@"ios_url"];
+//            if([app objectForKey:@"ios_version"]==[NSNull null]){
+//                return;
+//            }
+//            float webVersion =[[app objectForKey:@"ios_version"]floatValue];
+//            
+////            NSString *new_version_info = [app objectForKey:@"new_version_info"];
+//            
+//            float locoalVeision = [version floatValue];
+//            NSLog(@"当前版本%@ ，最新版本%f ",version,webVersion);
+//            //提示更新
+//            
+//            if (webVersion>locoalVeision) {
+//                
+//                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"客户端有新版本，是否现在更新?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+//
+//                [alert show];
+//                [alert bk_setHandler:^{
+//                    //客户端更新。。。。
+//                    NSLog(@"客户端更新iosUrl %@",iosUrl);
+//                    UIApplication *application = [UIApplication sharedApplication];
+//                    [application openURL:[NSURL URLWithString:iosUrl]];
+//                } forButtonAtIndex:1];
+//            }else{
+//                if (tag>0) {
+//                    NSString *str =  [NSString stringWithFormat:@"当前版本%.1f，最新版本%.1f，您的客户端已是最新版本！",locoalVeision,webVersion];
+//                    Alert(str);
+//                }else{
+//                     NSLog(@"不需要更新");
+//                }
+//               
+//            }
+//        }
+//    }];
+//    
+//    
+//}
 
 
 @end

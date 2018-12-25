@@ -15,20 +15,16 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - BAlert (0.1.2)
-  - FchKit (0.1.5):
+  - FchKit (0.1.6):
+    - FchKit/FchOCKit (= 0.1.6)
+    - FchKit/FchSwiftKit (= 0.1.6)
+  - FchKit/FchOCKit (0.1.6):
     - AFNetworking
-    - BAlert
-    - FchKit/FchOCKit (= 0.1.5)
-    - FchKit/FchSwiftKit (= 0.1.5)
-    - SnapKit
-  - FchKit/FchOCKit (0.1.5):
-    - AFNetworking
-    - BAlert
-    - SnapKit
-  - FchKit/FchSwiftKit (0.1.5):
-    - AFNetworking
+    - Masonry
+  - FchKit/FchSwiftKit (0.1.6):
     - BAlert
     - SnapKit
+  - Masonry (1.1.0)
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
@@ -38,6 +34,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - BAlert
+    - Masonry
     - SnapKit
 
 EXTERNAL SOURCES:
@@ -47,7 +44,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   BAlert: 1be1f3586f0b70c34fa92ce9c584551d4a3b26ee
-  FchKit: b307587afd9dc550059ac8039a3d122dca93e218
+  FchKit: ba54bffd7eb149a1e32ff61645f0e9007ef755ac
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
 PODFILE CHECKSUM: b7ed3267ba59f5600d352148df392fb224fb6dc4

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FchKit'
-  s.version          = '0.1.6'
+  s.version          = '0.1.7'
   s.summary          = 'A short description of FchKit.'
 
 # This description is used to generate tags and improve search results.
@@ -30,16 +30,27 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
+ 
  s.subspec 'FchSwiftKit' do |ss|
     ss.source_files = 'FchKit/Classes/FchSwiftKit/**/*'
-    s.swift_version = '4.2'
+
+    ss.dependency 'SnapKit'
+    ss.dependency 'BAlert'
   
   end
 
-  s.subspec 'FchOCKit' do |ss|
+ s.subspec 'FchOCKit' do |ss|
     ss.source_files = 'FchKit/Classes/FchOCKit/**/*'
-  
+    
+    ss.dependency 'AFNetworking'
+    #ss.dependency 'SDWebImage'
+    ss.dependency 'Masonry'
+   # ss.dependency 'BAlertView'
   end
+  
+
+ 
+  s.swift_version = '4.2'
 
 
   # s.source_files = 'FchKit/Classes/**/*'
@@ -50,10 +61,8 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'SnapKit'
-  s.dependency 'BAlert'
-  s.dependency 'AFNetworking'
-  
+ 
+ 
 
 
 end
