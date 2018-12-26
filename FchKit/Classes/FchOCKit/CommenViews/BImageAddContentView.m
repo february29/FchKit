@@ -9,7 +9,7 @@
 #import "BImageAddContentView.h"
 #import "Masonry.h"
 #import "BlocksKit+UIKit.h"
-#import "BaseDefine.h"
+//#import "BaseDefine.h"
 
 @interface BImageAddContentView(){
 //    UIButton *addBtn;
@@ -37,7 +37,7 @@
         _cloumeCount = 3;
         
         
-        itemw = (MSCW-GlobleMarginLeft*2-_marging*(_cloumeCount+1))/_cloumeCount;
+        itemw = ([UIScreen mainScreen].bounds.size.width-6*2-_marging*(_cloumeCount+1))/_cloumeCount;
 
         self.addBtn = [UIButton new];
         [self.addBtn setImage:[UIImage imageNamed:@"img_clickadd"] forState:0];
