@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FchKit'
-  s.version          = '0.1.7'
+  s.version          = '0.1.8'
   s.summary          = 'A short description of FchKit.'
 
 # This description is used to generate tags and improve search results.
@@ -31,6 +31,7 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '8.0'
 
  
+
  s.subspec 'FchSwiftKit' do |ss|
     ss.source_files = 'FchKit/Classes/FchSwiftKit/**/*'
 
@@ -42,11 +43,53 @@ TODO: Add long description of the pod here.
  s.subspec 'FchOCKit' do |ss|
     ss.source_files = 'FchKit/Classes/FchOCKit/**/*'
     
-    ss.dependency 'AFNetworking'
-    #ss.dependency 'SDWebImage'
+    
+    ss.subspec 'BNetWorking' do |sss|
+        sss.source_files = 'FchKit/Classes/FchOCKit/BNetWorking/**/*'
+        
+        sss.dependency 'AFNetworking'
+        
+    end
+    
+    ss.subspec 'BToolKit' do |sss|
+        sss.source_files = 'FchKit/Classes/FchOCKit/BToolKit/**/*'
+        
+        
+        
+    end
+    
+    ss.subspec 'BaseClass' do |sss|
+        sss.source_files = 'FchKit/Classes/FchOCKit/BaseClass/**/*'
+        
+        
+        
+    end
+    
+    ss.subspec 'BHUD' do |sss|
+        sss.source_files = 'FchKit/Classes/FchOCKit/BHUD/**/*'
+        
+    end
+    
+    ss.subspec 'CommenLib' do |sss|
+        sss.source_files = 'FchKit/Classes/FchOCKit/CommenLib/**/*'
+        
+        sss.dependency  'SDWebImage'
+    end
+    
+    ss.subspec 'CommenViews' do |sss|
+        sss.source_files = 'FchKit/Classes/FchOCKit/CommenViews/**/*'
+        
+        sss.dependency  'SDWebImage'
+    end
+    
+    
+    
     ss.dependency 'Masonry'
-   # ss.dependency 'BAlertView'
+    ss.dependency 'BlocksKit'
   end
+ 
+
+ 
   
 
  
