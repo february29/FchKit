@@ -9,14 +9,14 @@
 
 
 //#import <MBProgressHUD.h>
-#import "StringTool.h"
+//#import "StringTool.h"
 
 
 
 
 
 
-#import "ColorImageTool.h"
+//#import "ColorImageTool.h"
 
 
 @interface BaseViewController ()<UIAlertViewDelegate>{
@@ -67,7 +67,7 @@
     
     
 //    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg-top"] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setBackgroundImage:[ColorImageTool createImageWithColor:[UIColor colorWithRed:23/255.0 green:148/255.0 blue:200/255.0 alpha:1]] forBarMetrics:UIBarMetricsDefault];
+//    [self.navigationController.navigationBar setBackgroundImage:[ColorImageTool createImageWithColor:[UIColor colorWithRed:23/255.0 green:148/255.0 blue:200/255.0 alpha:1]] forBarMetrics:UIBarMetricsDefault];
 
 //    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
 //    self.navigationController.navigationBar.shadowImage = [[UIImage alloc]init];

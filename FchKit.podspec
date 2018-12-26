@@ -41,7 +41,7 @@ TODO: Add long description of the pod here.
   end
 
  s.subspec 'FchOCKit' do |ss|
-    ss.source_files = 'FchKit/Classes/FchOCKit/**/*'
+     ss.source_files = 'FchKit/Classes/FchOCKit/*.{h,m}'
     
     
     ss.subspec 'BNetWorking' do |sss|
