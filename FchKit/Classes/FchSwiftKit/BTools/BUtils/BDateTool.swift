@@ -43,7 +43,7 @@ public class BDateTool {
         let startIndex = timeString.index(timeString.startIndex, offsetBy: 5)
         let endIndex = timeString.index(timeString.endIndex,offsetBy: -4)
         let result = timeString.substring(with: startIndex..<endIndex)
-        
+       
         let dateformatter = DateFormatter();
         dateformatter.locale = Locale(identifier: "en_US") ;
         dateformatter.dateFormat = "dd MMM yyyy HH:mm:ss";
