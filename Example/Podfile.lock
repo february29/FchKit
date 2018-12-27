@@ -30,40 +30,40 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
-  - FchKit (0.1.8):
-    - FchKit/FchOCKit (= 0.1.8)
-    - FchKit/FchSwiftKit (= 0.1.8)
-  - FchKit/FchOCKit (0.1.8):
+  - FchKit (0.1.9):
+    - FchKit/FchOCKit (= 0.1.9)
+    - FchKit/FchSwiftKit (= 0.1.9)
+  - FchKit/FchOCKit (0.1.9):
     - BlocksKit
-    - FchKit/FchOCKit/BaseClass (= 0.1.8)
-    - FchKit/FchOCKit/BHUD (= 0.1.8)
-    - FchKit/FchOCKit/BNetWorking (= 0.1.8)
-    - FchKit/FchOCKit/BToolKit (= 0.1.8)
-    - FchKit/FchOCKit/CommenLib (= 0.1.8)
-    - FchKit/FchOCKit/CommenViews (= 0.1.8)
+    - FchKit/FchOCKit/BaseClass (= 0.1.9)
+    - FchKit/FchOCKit/BHUD (= 0.1.9)
+    - FchKit/FchOCKit/BNetWorking (= 0.1.9)
+    - FchKit/FchOCKit/BToolKit (= 0.1.9)
+    - FchKit/FchOCKit/CommenLib (= 0.1.9)
+    - FchKit/FchOCKit/CommenViews (= 0.1.9)
     - Masonry
-  - FchKit/FchOCKit/BaseClass (0.1.8):
-    - BlocksKit
-    - Masonry
-  - FchKit/FchOCKit/BHUD (0.1.8):
+  - FchKit/FchOCKit/BaseClass (0.1.9):
     - BlocksKit
     - Masonry
-  - FchKit/FchOCKit/BNetWorking (0.1.8):
+  - FchKit/FchOCKit/BHUD (0.1.9):
+    - BlocksKit
+    - Masonry
+  - FchKit/FchOCKit/BNetWorking (0.1.9):
     - AFNetworking
     - BlocksKit
     - Masonry
-  - FchKit/FchOCKit/BToolKit (0.1.8):
+  - FchKit/FchOCKit/BToolKit (0.1.9):
     - BlocksKit
     - Masonry
-  - FchKit/FchOCKit/CommenLib (0.1.8):
-    - BlocksKit
-    - Masonry
-    - SDWebImage
-  - FchKit/FchOCKit/CommenViews (0.1.8):
+  - FchKit/FchOCKit/CommenLib (0.1.9):
     - BlocksKit
     - Masonry
     - SDWebImage
-  - FchKit/FchSwiftKit (0.1.8):
+  - FchKit/FchOCKit/CommenViews (0.1.9):
+    - BlocksKit
+    - Masonry
+    - SDWebImage
+  - FchKit/FchSwiftKit (0.1.9):
     - BAlert
     - SnapKit
   - Masonry (1.1.0)
@@ -92,7 +92,7 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   BAlert: 1be1f3586f0b70c34fa92ce9c584551d4a3b26ee
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
-  FchKit: 3f19a6913d319cef74e1a31e121244dedc8cbefe
+  FchKit: 0c0fe15bc645bf3cf2568ddce8b1853fafeeb4f8
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
