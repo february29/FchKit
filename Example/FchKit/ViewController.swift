@@ -12,6 +12,10 @@ import BAlert
 
 class ViewController: UIViewController {
     
+    let i :Int? = nil
+    let s :String = "";
+    let d :Double = 0.1;
+    
     let scrollerView: BAutoHeightScrollView = {
         let temp = BAutoHeightScrollView();
         return temp

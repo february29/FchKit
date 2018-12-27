@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FchKit'
-  s.version          = '0.1.8'
+  s.version          = '0.1.9'
   s.summary          = 'A short description of FchKit.'
 
 # This description is used to generate tags and improve search results.
@@ -41,45 +41,47 @@ TODO: Add long description of the pod here.
   end
 
  s.subspec 'FchOCKit' do |ss|
-     ss.source_files = 'FchKit/Classes/FchOCKit/*.{h,m}'
+     
+    #ss.source_files = 'FchKit/Classes/FchOCKit/*.{h,m}'
+
     
     
     ss.subspec 'BNetWorking' do |sss|
-        sss.source_files = 'FchKit/Classes/FchOCKit/BNetWorking/**/*'
-        
-        sss.dependency 'AFNetworking'
-        
+      sss.source_files = 'FchKit/Classes/FchOCKit/BNetWorking/**/*'
+          
+      sss.dependency 'AFNetworking'
+          
     end
-    
+      
     ss.subspec 'BToolKit' do |sss|
-        sss.source_files = 'FchKit/Classes/FchOCKit/BToolKit/**/*'
-        
-        
-        
+      sss.source_files = 'FchKit/Classes/FchOCKit/BToolKit/**/*'
+          
+          
+          
     end
     
     ss.subspec 'BaseClass' do |sss|
-        sss.source_files = 'FchKit/Classes/FchOCKit/BaseClass/**/*'
+      sss.source_files = 'FchKit/Classes/FchOCKit/BaseClass/**/*'
         
         
         
     end
     
     ss.subspec 'BHUD' do |sss|
-        sss.source_files = 'FchKit/Classes/FchOCKit/BHUD/**/*'
+      sss.source_files = 'FchKit/Classes/FchOCKit/BHUD/**/*'
         
     end
     
     ss.subspec 'CommenLib' do |sss|
-        sss.source_files = 'FchKit/Classes/FchOCKit/CommenLib/**/*'
+      sss.source_files = 'FchKit/Classes/FchOCKit/CommenLib/**/*'
         
-        sss.dependency  'SDWebImage'
+      sss.dependency  'SDWebImage'
     end
     
     ss.subspec 'CommenViews' do |sss|
-        sss.source_files = 'FchKit/Classes/FchOCKit/CommenViews/**/*'
+      sss.source_files = 'FchKit/Classes/FchOCKit/CommenViews/**/*'
         
-        sss.dependency  'SDWebImage'
+      sss.dependency  'SDWebImage'
     end
     
     

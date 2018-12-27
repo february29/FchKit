@@ -7,7 +7,6 @@
 //
 
 #import "UILabel+ConvenienceInit.h"
-#import "BaseDefine.h"
 @implementation UILabel (ConvenienceInit)
 
 + (UILabel *)labelWithTextColor:(UIColor *)color
@@ -38,10 +37,10 @@
         label.textColor = color;
     }
     if (font) {
-       label.font = FONT(font);
+       label.font = [UIFont systemFontOfSize:font];
     }
     if (bold) {
-        label.font = BOLDFONT(font);
+        label.font = [UIFont boldSystemFontOfSize:font];
     }
     if (alignment) {
         label.textAlignment = alignment;

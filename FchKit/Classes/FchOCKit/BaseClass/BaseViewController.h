@@ -7,9 +7,9 @@
 
 #import <UIKit/UIKit.h>
 
-#import "BaseDefine.h"
 
-#import "GlobleToolDefine.h"
+
+
 
 
 

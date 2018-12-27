@@ -91,7 +91,7 @@
     [_leftbtn setImage:[UIImage imageNamed:@"btn-top-back"] forState:UIControlStateNormal];
     [_leftbtn setImageEdgeInsets:UIEdgeInsetsMake(7.5,0, 7.5, 15)];
     [_leftbtn addTarget: self action: @selector(goBackAction) forControlEvents: UIControlEventTouchUpInside];
-    [_leftbtn setTitleColor:TEXTGRAYCOLOR forState:0];
+    [_leftbtn setTitleColor:[UIColor whiteColor] forState:0];
     [leftView addSubview:_leftbtn];
     UIBarButtonItem*back=[[UIBarButtonItem alloc]initWithCustomView:leftView];
     self.navigationItem.leftBarButtonItem=back;
@@ -103,7 +103,7 @@
     _rigthtbtn.frame = CGRectMake(6, 0, 44, 44);
     [_rigthtbtn setImage:[UIImage imageNamed:@"btn_top_setting"] forState:UIControlStateNormal];
     [_rigthtbtn setTitleColor:[UIColor whiteColor] forState:0];
-    [_rigthtbtn.titleLabel setFont:FONTSUPPERLARGE];
+    [_rigthtbtn.titleLabel setFont:[UIFont systemFontOfSize:17]];
     [_rigthtbtn addTarget: self action: @selector(rightBarButtonAction:) forControlEvents: UIControlEventTouchUpInside];
     _rigthtbtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
    [rightView addSubview:_rigthtbtn];

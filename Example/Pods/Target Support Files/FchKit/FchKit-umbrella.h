@@ -10,7 +10,7 @@
 #endif
 #endif
 
-#import "BaseDefine.h"
+#import "FchKitBaseDefine.h"
 #import "GlobleToolDefine.h"
 #import "BHudContentView.h"
 #import "BHudView.h"
