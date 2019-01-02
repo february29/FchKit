@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     let s :String = "";
     let d :Double = 0.1;
     
+    let base = BaseViewController();
     let scrollerView: BAutoHeightScrollView = {
         let temp = BAutoHeightScrollView();
         return temp
@@ -58,6 +59,9 @@ class ViewController: UIViewController {
             
         }
         
+        
+       
+        
         return temp;
     }()
     
@@ -92,7 +96,12 @@ class ViewController: UIViewController {
         
 //        BStringTool.trimNil(str: <#T##String?#>)
         
-    
+        BNetWorkingManager.sharedInstance()?.baseURL = "http://124.88.168.158:8098"
+        BNetWorkingManager.sharedInstance()?.get("backend/web/risk/control/preset/lists", paraments: nil, complete: { (respons, error) in
+            print(respons);
+        })
+       let c =  #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.view.backgroundColor = c;
 
         self.view.addSubview(self.scrollerView);
         

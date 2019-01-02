@@ -18,7 +18,26 @@ typedef void(^completeBlock)( id _Nullable responseObject,NSError * _Nullable er
 
 + (instancetype _Nullable )sharedInstance;
 
+
+
+/**
+ baseURL 设置该属性以后会在所有请求rul之前拼接baseURL
+ */
+@property (nonatomic,strong)  NSString *baseURL;
+
+
+/**
+ 网络请求的manager
+ */
 @property(nonatomic,retain,readwrite)AFHTTPSessionManager * _Nullable jsonsessionManager;
+
+
+/**
+ 文件下载的manager
+ */
+@property(nonatomic,retain,readwrite)AFHTTPSessionManager * _Nullable downloadManager;
+
+
 
 
 -(nullable NSURLSessionDataTask *)GET:(nonnull NSString *)urlString
@@ -29,7 +48,7 @@ typedef void(^completeBlock)( id _Nullable responseObject,NSError * _Nullable er
                               paraments:(nullable id)paraments
                           completeBlock:(nullable completeBlock)completeBlock;
 
-- (nullable NSURLSessionDataTask *)POST:(NSString *_Nullable)URLString
+- (nullable NSURLSessionDataTask *)POST:(NSString *_Nullable)urlString
                              parameters:(nullable id)parameters
               constructingBodyWithBlock:(nullable void (^)(id <AFMultipartFormData> formData))block
                                progress:(nullable void (^)(NSProgress * _Nullable uploadProgress)) uploadProgress

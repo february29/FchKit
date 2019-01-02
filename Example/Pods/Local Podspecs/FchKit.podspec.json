@@ -1,6 +1,6 @@
 {
   "name": "FchKit",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "summary": "A short description of FchKit.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "http://10.10.1.1/git/FchKit",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "http://10.10.1.1/git/FchKit.git",
-    "tag": "0.1.9"
+    "tag": "0.1.10"
   },
   "platforms": {
     "ios": "8.0"
