@@ -53,15 +53,16 @@ public class BPromptView: UIView {
         let temp  = UIButton();
         temp.titleLabel?.font = UIFont.systemFont(ofSize: 17);
         temp.setTitle("确定", for: .normal);
-        temp.setTitleColor(UIColor.init(r: 228, g: 71, b: 71), for: .normal);
+        temp.setTitleColor(UIColor(red: 228/255.0, green: 71/255.0, blue: 71/255.0, alpha: 1), for: .normal);
         temp.addTarget(self, action: #selector(okButtonClick), for: .touchUpInside);
         return temp;
+        
     }()
     lazy public var cancelBtn: UIButton = {
         let temp  = UIButton();
         temp.titleLabel?.font = UIFont.systemFont(ofSize: 17);
         temp.setTitle("取消", for: .normal);
-        temp.setTitleColor(UIColor.init(r: 228, g: 71, b: 71), for: .normal);
+        temp.setTitleColor(UIColor(red: 228/255.0, green: 71/255.0, blue: 71/255.0, alpha: 1), for: .normal);
         temp.addTarget(self, action: #selector(cancelButtonClick), for: .touchUpInside);
         return temp;
     }()

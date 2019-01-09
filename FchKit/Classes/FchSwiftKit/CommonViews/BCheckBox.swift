@@ -84,7 +84,8 @@ open class BCheckBox: UIView {
         
         checkButton.addTarget(self, action: #selector(checkButtonAction), for: .touchUpInside)
         
-        newCountLable.backgroundColor = UIColor(r: 250, g: 91, b: 10);
+        
+        newCountLable.backgroundColor = UIColor(red: 250/255.0, green: 91/255.0, blue: 10/255.0, alpha: 1);
         newCountLable.textColor = UIColor.white;
         newCountLable.textAlignment = .center;
         newCountLable.layer.cornerRadius = 5;
