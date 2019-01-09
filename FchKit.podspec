@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FchKit'
-  s.version          = '0.2.0'
+  s.version          = '0.2.1'
   s.summary          = 'A short description of FchKit.'
 
 # This description is used to generate tags and improve search results.
@@ -33,7 +33,27 @@ TODO: Add long description of the pod here.
  
 
  s.subspec 'FchSwiftKit' do |ss|
-    ss.source_files = 'FchKit/Classes/FchSwiftKit/**/*'
+     # ss.source_files = 'FchKit/Classes/FchSwiftKit/**/*'
+    
+    ss.subspec 'Adapter' do |sss|
+        sss.source_files = 'FchKit/Classes/FchSwiftKit/Adapter/**/*'
+        
+    end
+    
+    ss.subspec 'BBaseClass' do |sss|
+        sss.source_files = 'FchKit/Classes/FchSwiftKit/BBaseClass/**/*'
+        
+    end
+    
+    ss.subspec 'BTools' do |sss|
+        sss.source_files = 'FchKit/Classes/FchSwiftKit/BTools/**/*'
+        
+    end
+    
+    ss.subspec 'CommonViews' do |sss|
+        sss.source_files = 'FchKit/Classes/FchSwiftKit/CommonViews/**/*'
+        
+    end
 
     ss.dependency 'SnapKit'
     ss.dependency 'BAlert'
@@ -83,6 +103,8 @@ TODO: Add long description of the pod here.
         
       sss.dependency  'SDWebImage'
     end
+    
+   
     
     
     

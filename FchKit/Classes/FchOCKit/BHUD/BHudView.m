@@ -64,7 +64,7 @@
 
 +(void)showInView:(UIView *_Nullable)supperView indicatorViewStyle:(BHudIndicatorViewStyle )indicatorViewStyle hudType:(BHudContentViewType)hudType indicatorProportion:(float)indicatorProportion{
     
-    BHudContentView *contentView = [[BHudContentView alloc]initWithFrame:supperView.frame];
+    BHudContentView *contentView = [[BHudContentView alloc]initWithFrame:supperView.bounds];
     contentView.indicatorViewStyle = indicatorViewStyle;
     contentView.hudType = hudType;
     contentView.indicatorProportion = indicatorProportion;
@@ -108,7 +108,7 @@
 }
 
 +(void)showCustomHudView:(UIView *_Nullable)view InView:(UIView *_Nullable)supperView{
-    BHudContentView *contentView = [[BHudContentView alloc]initWithFrame:supperView.frame];
+    BHudContentView *contentView = [[BHudContentView alloc]initWithFrame:supperView.bounds];
     contentView.indicatorViewStyle = BHudCustomView;
     contentView.customView = view;
     contentView.hudType = BIndicatorHud;

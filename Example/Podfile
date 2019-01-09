@@ -3,6 +3,8 @@ use_frameworks!
 target 'FchKit_Example' do
   pod 'FchKit', :path => '../'
 
+  # pod 'RxSwift', '~> 4.4.0'
+  pod 'RxCocoa', '~> 4.4.0'
   target 'FchKit_Tests' do
     inherit! :search_paths
 

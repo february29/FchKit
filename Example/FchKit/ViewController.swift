@@ -9,14 +9,65 @@
 import UIKit
 import FchKit
 import BAlert
+import RxSwift
+import RxCocoa
+
+
 
 class ViewController: UIViewController {
     
-    let i :Int? = nil
-    let s :String = "";
-    let d :Double = 0.1;
     
-    let base = BaseViewController();
+    let disposeBag = DisposeBag();
+    var netWork1:Observable = { () -> Observable<Any> in
+        let net = Observable<Any>.create { (ob) -> Disposable in
+            let task =  BNetWorkingManager.sharedInstance()!.get("http://oa.fchsoft.com:8442/mobile//checkImei.json?imei=5C812611-5C10-4FD7-9880-04F84BAA6C9D", paraments: nil, complete: { (respons, error) in
+                
+                if let error = error {
+                    print("net 1 error")
+                    ob.onError(error)
+                    
+                }
+                if let respons = respons{
+                    ob.onNext(respons)
+                    ob.onCompleted()
+                }
+                
+            })
+            
+            return Disposables.create {
+                task?.cancel();
+            }
+        }
+        
+        return net;
+    }()
+    var netWork2:Observable = { () -> Observable<Any> in
+        let net2 = Observable<Any>.create { (ob) -> Disposable in
+            let task =  BNetWorkingManager.sharedInstance()!.get("http://oa.fchsoft.com:8442/mobile//checkImei.json?imei=5C812611-5C10-4FD7-9880-04F84BAA6C9D", paraments: nil, complete: { (respons, error) in
+                
+                if let error = error {
+                    print("net 2 error")
+                    ob.onError(error)
+                    
+                }
+                if let respons = respons{
+                    ob.onNext(respons)
+                    ob.onCompleted()
+                }
+                
+            })
+            
+            return Disposables.create {
+                task?.cancel();
+            }
+        }
+        return net2;
+    }()
+    
+   
+    let ob1 = Observable.of("1","2","3","4")
+    let ob2 = Observable.of("a","b","c","d")
+    
     let scrollerView: BAutoHeightScrollView = {
         let temp = BAutoHeightScrollView();
         return temp
@@ -96,11 +147,11 @@ class ViewController: UIViewController {
         
 //        BStringTool.trimNil(str: <#T##String?#>)
         
-        BNetWorkingManager.sharedInstance()?.baseURL = "http://124.88.168.158:8098"
-        BNetWorkingManager.sharedInstance()?.get("backend/web/risk/control/preset/lists", paraments: nil, complete: { (respons, error) in
-            print(respons);
-        })
-       let c =  #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+//        BNetWorkingManager.sharedInstance()?.baseURL = "http://124.88.168.158:8098"
+//        BNetWorkingManager.sharedInstance()?.get("backend/web/risk/control/preset/lists", paraments: nil, complete: { (respons, error) in
+//            print(respons);
+//        })
+       let c =  #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         self.view.backgroundColor = c;
 
         self.view.addSubview(self.scrollerView);
@@ -121,6 +172,17 @@ class ViewController: UIViewController {
             make.height.equalTo(40);
         }
         
+       
+        
+        
+        
+        
+        
+//        btn.rx.tap
+//            .subscribe(onNext: {
+//                print("button Tapped")
+//            })
+//            .disposed(by: disposeBag)
         
        
         self.scrollerView.contentView.addSubview(self.checkbox)
@@ -163,6 +225,71 @@ class ViewController: UIViewController {
         
         
         
+        //=======================RX======================
+        
+        let btn = UIButton();
+        btn.backgroundColor = UIColor.yellow;
+        self.view.addSubview(btn);
+        btn.snp.makeConstraints { (make) in
+            make.centerX.equalTo(self.scrollerView.contentView);
+            make.top.equalTo(placeHolderTextView.snp.bottom).offset(10);
+            make.width.equalTo(100);
+            make.height.equalTo(40);
+        }
+        
+        
+        btn.rx.tap.subscribe(onNext: {
+            BAlert.sharedInstance.makeToast(message: "btn tap");
+        }).disposed(by: disposeBag);
+        
+        
+       let isValid =  placeHolderTextView.rx.text.orEmpty.asObservable().map { (text) -> Bool in
+            return text.count>0
+        }
+        
+//        let observer = checkbox.rx.isHidden;
+//        isValid.bind(to: observer).disposed(by: disposeBag);
+        
+        isValid.bind { (isValid) in
+            self.checkbox.isHidden = !isValid
+            
+            }.disposed(by: disposeBag);
+
+        
+        
+        
+        
+        
+        
+        
+
+        amb()
+        combineLatest();
+        zip();
+        concat();
+        startWith();
+        merge();
+        
+       
+      
+        
+        
+//        net.asSingle();
+        
+    
+        
+        
+//        net.subscribe(onNext: { (rep) in
+//            print("rep")
+//        }, onError: { (error) in
+//            print(error);
+//            
+//        }).disposed(by: disposeBag);
+        
+       
+        
+        
+        
         
         
         self.scrollerView.setBottomView(view:self.placeHolderTextView);
@@ -170,6 +297,251 @@ class ViewController: UIViewController {
         
         
         
+        
+    }
+    
+    func launch() {
+        
+    }
+    
+    func amb() {
+        
+        print("-------------\(#function)-------------")
+        let first = PublishSubject<String>()
+        let second = PublishSubject<String>()
+        
+        Observable.amb([first,second]).subscribe(onNext: { str in
+            print("amb :\(str)");
+        }).disposed(by: disposeBag);
+        
+        second.onNext("a");
+        first.onNext("1");
+        
+        first.onNext("2");
+        
+        second.onNext("b");
+        first.onNext("3");
+        first.onNext("4");
+        second.onNext("c");
+        second.onNext("d");
+        
+        
+    }
+    
+    func combineLatest() {
+        print("-------------\(#function)-------------")
+        let first = PublishSubject<String>()
+        let second = PublishSubject<String>()
+        
+        Observable.combineLatest(first, second) { (str1, str2) -> String in
+            return str1+str2
+            }.subscribe(onNext: { (str) in
+                print("combineLatest:\(str)");
+            }).disposed(by: disposeBag);
+        
+        second.onNext("a");
+        first.onNext("1");
+        
+        first.onNext("2");
+        
+        second.onNext("b");
+        first.onNext("3");
+        first.onNext("4");
+        second.onNext("c");
+        second.onNext("d");
+       
+        
+    }
+    
+    
+    func zip()  {
+        print("-------------\(#function)-------------")
+        
+        let first = PublishSubject<String>()
+        let second = PublishSubject<String>()
+        Observable.zip(first, second) { (str1, str2) -> String in
+            return str1+str2
+            }.subscribe(onNext: { (str) in
+                print("combineLatest:\(str)");
+            }).disposed(by: disposeBag);
+        
+        second.onNext("a");
+        first.onNext("1");
+        
+        first.onNext("2");
+        
+        second.onNext("b");
+        first.onNext("3");
+        first.onNext("4");
+        second.onNext("c");
+        second.onNext("d");
+        
+        
+//        Observable.zip(netWork1, netWork2) { result1,result2  in
+//            return (result1,result1);
+//            }.subscribe(onNext: { (zipResult) in
+//                let dic1 =  zipResult.0 as! Dictionary<String, Any>
+//                let dic2 =  zipResult.0 as! Dictionary<String, Any>
+//
+//                print("result1 is : \(dic1)");
+//                print("result2 is : \(dic2)");
+//
+//            }, onError: { (error) in
+//                print("an error happen:\(error)");
+//            }, onCompleted: {
+//                print("zip onCompleted")
+//            }).disposed(by: disposeBag)
+        
+        
+        //任意 source 发生error后  都执行 zip onError 且只执行一次  无论其他source成功与否
+        
+        
+    }
+    
+    
+    func concat() {
+        print("-------------\(#function)-------------")
+        let first = PublishSubject<String>()
+        let second = PublishSubject<String>()
+        
+        first.concat(second).subscribe(onNext: { (str) in
+            print("concat:\(str)")
+        }).disposed(by: disposeBag)
+        
+        
+        second.onNext("a");
+        first.onNext("1");
+        
+        first.onNext("2");
+//        first.onCompleted();
+        
+        second.onNext("b");
+        first.onNext("3");
+        first.onNext("4");
+        second.onNext("c");
+        second.onNext("d");
+        
+        //
+        
+    }
+    
+    
+    func concatMap() {
+        print("-------------\(#function)-------------")
+        let first = PublishSubject<String>()
+        let second = PublishSubject<String>()
+//
+//        first.concatMap { (str) -> ObservableConvertibleType in
+//            return str;
+//        }.sub
+//        first.concat(second).subscribe(onNext: { (str) in
+//            print("concat:\(str)")
+//        }).disposed(by: disposeBag)
+//
+//
+//        second.onNext("a");
+//        first.onNext("1");
+//
+//        first.onNext("2");
+//        //        first.onCompleted();
+//
+//        second.onNext("b");
+//        first.onNext("3");
+//        first.onNext("4");
+//        second.onNext("c");
+//        second.onNext("d");
+        
+        //
+        
+    }
+    
+    func connect() {
+        print("-------------\(#function)-------------")
+        let first = PublishSubject<String>()
+        let second = PublishSubject<String>()
+        
+//        O
+//        first.concat(second).subscribe(onNext: { (str) in
+//            print("concat:\(str)")
+//        }).disposed(by: disposeBag)
+//
+//
+//        second.onNext("a");
+//        first.onNext("1");
+//
+//        first.onNext("2");
+//        //        first.onCompleted();
+//
+//        second.onNext("b");
+//        first.onNext("3");
+//        first.onNext("4");
+//        second.onNext("c");
+//        second.onNext("d");
+        
+        //
+        
+    
+        
+        
+    }
+    
+    
+    
+    
+    func startWith() {
+        print("-------------\(#function)-------------")
+        let first = PublishSubject<String>()
+        let second = PublishSubject<String>()
+        
+    
+        first.startWith("0")
+       .subscribe(onNext: { (str) in
+            print("startWith:\(str)")
+        }).disposed(by: disposeBag)
+        
+        
+        second.onNext("a");
+        first.onNext("1");
+        
+        first.onNext("2");
+        
+        second.onNext("b");
+        first.onNext("3");
+        first.onNext("4");
+        second.onNext("c");
+        second.onNext("d");
+        
+        
+    }
+
+    
+   
+    func merge () {
+        print("-------------\(#function)-------------")
+        let first = PublishSubject<String>()
+        let second = PublishSubject<String>()
+    
+    
+        Observable.merge([first,second])
+            .subscribe(onNext: { (str) in
+                print("merge:\(str)")
+            }).disposed(by: disposeBag)
+        
+        
+        second.onNext("a");
+        first.onNext("1");
+        
+        first.onNext("2");
+        
+        second.onNext("b");
+        first.onNext("3");
+        first.onNext("4");
+        second.onNext("c");
+        second.onNext("d");
+        
+//        通过使用 merge 操作符你可以将多个 Observables 合并成一个，当某一个 Observable 发出一个元素时，他就将这个元素发出。
+//
+//        如果，某一个 Observable 发出一个 onError 事件，那么被合并的 Observable 也会将它发出，并且立即终止序列。
         
     }
 

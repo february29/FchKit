@@ -1,6 +1,6 @@
 {
   "name": "FchKit",
-  "version": "0.1.10",
+  "version": "0.2.1",
   "summary": "A short description of FchKit.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "http://10.10.1.1/git/FchKit",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "http://10.10.1.1/git/FchKit.git",
-    "tag": "0.1.10"
+    "tag": "0.2.1"
   },
   "platforms": {
     "ios": "8.0"
@@ -22,7 +22,6 @@
   "subspecs": [
     {
       "name": "FchSwiftKit",
-      "source_files": "FchKit/Classes/FchSwiftKit/**/*",
       "dependencies": {
         "SnapKit": [
 
@@ -30,7 +29,25 @@
         "BAlert": [
 
         ]
-      }
+      },
+      "subspecs": [
+        {
+          "name": "Adapter",
+          "source_files": "FchKit/Classes/FchSwiftKit/Adapter/**/*"
+        },
+        {
+          "name": "BBaseClass",
+          "source_files": "FchKit/Classes/FchSwiftKit/BBaseClass/**/*"
+        },
+        {
+          "name": "BTools",
+          "source_files": "FchKit/Classes/FchSwiftKit/BTools/**/*"
+        },
+        {
+          "name": "CommonViews",
+          "source_files": "FchKit/Classes/FchSwiftKit/CommonViews/**/*"
+        }
+      ]
     },
     {
       "name": "FchOCKit",

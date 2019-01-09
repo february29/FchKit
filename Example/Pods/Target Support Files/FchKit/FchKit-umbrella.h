@@ -43,7 +43,6 @@
 #import "UIView+BExtension.h"
 #import "UIView+BShark.h"
 #import "BCopyLable.h"
-#import "BFontAdatper.h"
 #import "BKeybordReturnHandler.h"
 #import "ColorImageTool.h"
 #import "DateTool.h"

@@ -21,9 +21,24 @@ typedef void(^completeBlock)( id _Nullable responseObject,NSError * _Nullable er
 
 
 /**
- baseURL 设置该属性以后会在所有请求rul之前拼接baseURL
+ baseURL 其他网络请求时都拼接该字段
+ 这里只负责记录 使用时获取手动拼接
  */
 @property (nonatomic,strong)  NSString *baseURL;
+
+
+/**
+ 备用的baseURL 当一个baseURL无法满足时使用
+ 这里只负责记录 使用时获取手动拼接
+ */
+@property (nonatomic,strong)  NSString *baseURL2;
+
+
+/**
+ 备用字段 用于记录其他需要记录的信息
+ 
+ */
+@property(nonatomic,strong)NSMutableDictionary *reseverDictionnary;
 
 
 /**

@@ -71,9 +71,7 @@
                             paraments:(nullable id)paraments
                         completeBlock:(nullable completeBlock)completeBlock{
     
-    if (self.baseURL) {
-        urlString = [NSString stringWithFormat:@"%@/%@",self.baseURL,urlString];
-    }
+
     
     NSLog(@"***>>NetWorking urlString<<**\n%@",urlString);
     NSLog(@"***>>NetWorking paraments<<**\n%@",paraments);
@@ -110,9 +108,7 @@
                              paraments:(nullable id)paraments
                          completeBlock:(nullable completeBlock)completeBlock{
     
-    if (self.baseURL) {
-        urlString = [NSString stringWithFormat:@"%@/%@",self.baseURL,urlString];
-    }
+
     
     NSLog(@"***>>NetWorking urlString<<**\n%@",urlString);
     NSLog(@"***>>NetWorking paraments<<**\n%@",paraments);
@@ -153,9 +149,7 @@
                                progress:(nullable void (^)(NSProgress * _Nullable uploadProgress)) uploadProgress
                           completeBlock:(nullable completeBlock)completeBlock{
     
-    if (self.baseURL) {
-        urlString = [NSString stringWithFormat:@"%@/%@",self.baseURL,urlString];
-    }
+
     
     return [self.jsonsessionManager POST:urlString parameters:parameters constructingBodyWithBlock:block progress:uploadProgress success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dict = responseObject;
@@ -184,9 +178,7 @@
 -(void)downloadURL:(NSString *) downloadURL progress:(void (^)(NSProgress *downloadProgress))progress destination:(NSURL * (^)(NSURL *targetPath, NSURLResponse *response))destination completeBlock:(void(^)(NSURLResponse * _Nonnull response, NSURL * _Nonnull filePath, NSError * _Nonnull error))completeBlock{
     
     
-    if (self.baseURL) {
-        downloadURL = [NSString stringWithFormat:@"%@/%@",self.baseURL,downloadURL];
-    }
+
     
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: downloadURL]];

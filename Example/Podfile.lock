@@ -30,43 +30,64 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
-  - FchKit (0.1.10):
-    - FchKit/FchOCKit (= 0.1.10)
-    - FchKit/FchSwiftKit (= 0.1.10)
-  - FchKit/FchOCKit (0.1.10):
+  - FchKit (0.2.1):
+    - FchKit/FchOCKit (= 0.2.1)
+    - FchKit/FchSwiftKit (= 0.2.1)
+  - FchKit/FchOCKit (0.2.1):
     - BlocksKit
-    - FchKit/FchOCKit/BaseClass (= 0.1.10)
-    - FchKit/FchOCKit/BHUD (= 0.1.10)
-    - FchKit/FchOCKit/BNetWorking (= 0.1.10)
-    - FchKit/FchOCKit/BToolKit (= 0.1.10)
-    - FchKit/FchOCKit/CommenLib (= 0.1.10)
-    - FchKit/FchOCKit/CommenViews (= 0.1.10)
+    - FchKit/FchOCKit/BaseClass (= 0.2.1)
+    - FchKit/FchOCKit/BHUD (= 0.2.1)
+    - FchKit/FchOCKit/BNetWorking (= 0.2.1)
+    - FchKit/FchOCKit/BToolKit (= 0.2.1)
+    - FchKit/FchOCKit/CommenLib (= 0.2.1)
+    - FchKit/FchOCKit/CommenViews (= 0.2.1)
     - Masonry
-  - FchKit/FchOCKit/BaseClass (0.1.10):
-    - BlocksKit
-    - Masonry
-  - FchKit/FchOCKit/BHUD (0.1.10):
+  - FchKit/FchOCKit/BaseClass (0.2.1):
     - BlocksKit
     - Masonry
-  - FchKit/FchOCKit/BNetWorking (0.1.10):
+  - FchKit/FchOCKit/BHUD (0.2.1):
+    - BlocksKit
+    - Masonry
+  - FchKit/FchOCKit/BNetWorking (0.2.1):
     - AFNetworking
     - BlocksKit
     - Masonry
-  - FchKit/FchOCKit/BToolKit (0.1.10):
+  - FchKit/FchOCKit/BToolKit (0.2.1):
     - BlocksKit
     - Masonry
-  - FchKit/FchOCKit/CommenLib (0.1.10):
-    - BlocksKit
-    - Masonry
-    - SDWebImage
-  - FchKit/FchOCKit/CommenViews (0.1.10):
+  - FchKit/FchOCKit/CommenLib (0.2.1):
     - BlocksKit
     - Masonry
     - SDWebImage
-  - FchKit/FchSwiftKit (0.1.10):
+  - FchKit/FchOCKit/CommenViews (0.2.1):
+    - BlocksKit
+    - Masonry
+    - SDWebImage
+  - FchKit/FchSwiftKit (0.2.1):
+    - BAlert
+    - FchKit/FchSwiftKit/Adapter (= 0.2.1)
+    - FchKit/FchSwiftKit/BBaseClass (= 0.2.1)
+    - FchKit/FchSwiftKit/BTools (= 0.2.1)
+    - FchKit/FchSwiftKit/CommonViews (= 0.2.1)
+    - SnapKit
+  - FchKit/FchSwiftKit/Adapter (0.2.1):
+    - BAlert
+    - SnapKit
+  - FchKit/FchSwiftKit/BBaseClass (0.2.1):
+    - BAlert
+    - SnapKit
+  - FchKit/FchSwiftKit/BTools (0.2.1):
+    - BAlert
+    - SnapKit
+  - FchKit/FchSwiftKit/CommonViews (0.2.1):
     - BAlert
     - SnapKit
   - Masonry (1.1.0)
+  - RxAtomic (4.4.0)
+  - RxCocoa (4.4.0):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.4.0):
+    - RxAtomic (~> 4.4)
   - SDWebImage (4.4.3):
     - SDWebImage/Core (= 4.4.3)
   - SDWebImage/Core (4.4.3)
@@ -74,6 +95,7 @@ PODS:
 
 DEPENDENCIES:
   - FchKit (from `../`)
+  - RxCocoa (~> 4.4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -81,6 +103,9 @@ SPEC REPOS:
     - BAlert
     - BlocksKit
     - Masonry
+    - RxAtomic
+    - RxCocoa
+    - RxSwift
     - SDWebImage
     - SnapKit
 
@@ -92,11 +117,14 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   BAlert: 1be1f3586f0b70c34fa92ce9c584551d4a3b26ee
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
-  FchKit: a9f462eb19e396f4eb9cf5a33755d5f20bd3ade8
+  FchKit: 44607fdeeb694f080b420d8af99bbbcf3b90d8b1
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
+  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: b7ed3267ba59f5600d352148df392fb224fb6dc4
+PODFILE CHECKSUM: fdd4ab3a630ee7781dfac7d13a4b2e070b02d635
 
 COCOAPODS: 1.6.0.beta.2
