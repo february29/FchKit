@@ -161,6 +161,15 @@ class ViewController: UIViewController {
         }
         
         
+        //navigationBar 被所有vc共享
+        self.navigationController?.navigationBar.barTintColor = UIColor.yellow;
+       
+        //每个 VC 有一个 UIBarButtonItem 设置以后显示d到navigationBar上
+        let left = UIBarButtonItem.init(image: UIImage.init(color: UIColor.purple), style: .plain, target: self, action: #selector(back));
+        self.navigationItem.leftBarButtonItem = left;
+        
+        let  bar = self.navigationController?.navigationBar
+        let item = self.navigationItem
         
         let tf = UITextField();
         tf.setPlaceHolder(placeHolder: "ddd", color: UIColor.purple);
@@ -240,6 +249,7 @@ class ViewController: UIViewController {
         
         btn.rx.tap.subscribe(onNext: {
             BAlert.sharedInstance.makeToast(message: "btn tap");
+            self.navigationController?.pushViewController(ViewController2(), animated: true);
         }).disposed(by: disposeBag);
         
         
@@ -255,6 +265,7 @@ class ViewController: UIViewController {
             
             }.disposed(by: disposeBag);
 
+        
         
         
         
@@ -298,6 +309,11 @@ class ViewController: UIViewController {
         
         
         
+    }
+    
+   
+    @objc func back()  {
+        self.navigationController?.popViewController(animated: true);
     }
     
     func launch() {
@@ -359,6 +375,12 @@ class ViewController: UIViewController {
         
         let first = PublishSubject<String>()
         let second = PublishSubject<String>()
+        let third = PublishSubject<Bool>()
+        
+        Observable.zip(first, third) { (r1, r3) -> String in
+            
+            return "";
+        }
         Observable.zip(first, second) { (str1, str2) -> String in
             return str1+str2
             }.subscribe(onNext: { (str) in
@@ -430,6 +452,7 @@ class ViewController: UIViewController {
         print("-------------\(#function)-------------")
         let first = PublishSubject<String>()
         let second = PublishSubject<String>()
+       
 //
 //        first.concatMap { (str) -> ObservableConvertibleType in
 //            return str;
@@ -538,6 +561,8 @@ class ViewController: UIViewController {
         first.onNext("4");
         second.onNext("c");
         second.onNext("d");
+        
+    
         
 //        通过使用 merge 操作符你可以将多个 Observables 合并成一个，当某一个 Observable 发出一个元素时，他就将这个元素发出。
 //

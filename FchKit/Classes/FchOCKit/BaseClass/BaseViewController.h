@@ -24,26 +24,32 @@
 @property (nonatomic, readwrite, retain)  UIButton *leftbtn;
 @property (nonatomic, readwrite, retain)  UIButton *rigthtbtn;
 
+//默认通过  实现显示，子类重写该方法定制新实现
+-(void)confitNavgationBar;
+
+
 -(void)setLeftBtnHidde:(BOOL)hidde;
 -(void)setLeftbtnTitle:(NSString *)title;
+-(void)goBackAction;
+
 -(void)setRigthtBtnHidde:(BOOL)hidde;
 -(void)setRigthtbtnTitle:(NSString *)title;
 -(void)setRigthtbtnImage:(UIImage *)image;
 -(void)rightBarButtonAction:(id)sender;
 
--(void)goBackAction;
 
 
-@property(nonatomic,readwrite)BOOL hiddeBottmBar;
 
--(void)setBottomBarBadge:(NSString *)badge atIndext:(int )indext;
+//@property(nonatomic,readwrite)BOOL hiddeBottmBar;
+
+//-(void)setBottomBarBadge:(NSString *)badge atIndext:(int )indext;
 
 
 
 
 -(void)alertViewWithTitle:(NSString *)title  message:(NSString *)massage cancleBlock:(void(^)(void))cancleBlock okBlock:(void(^)(void))okBlock;
 
--(void)checkAppHasNewVersionWithTag:(NSInteger ) tag;
+//-(void)checkAppHasNewVersionWithTag:(NSInteger ) tag;
 
 
 @end
