@@ -22,7 +22,7 @@ pod 'FchKit'
 
 ## Author
 
-february29, baiyahui@fchsoft.com
+february29, pengyou_byh@163.com
 
 ## License
 
