@@ -16,6 +16,7 @@ typedef void(^LuosFailBtnClickBlock)();
 @interface BHudView : NSObject
 
 
+
 +(void)showHudInView:(UIView *_Nullable)supperView;
 
 +(void)showIndicatorInView:(UIView *_Nullable)supperView;
@@ -24,8 +25,6 @@ typedef void(^LuosFailBtnClickBlock)();
 +(void)showHudInView:(UIView *_Nullable)supperView indicatorViewStyle:(BHudIndicatorViewStyle )indicatorViewStyle;
 
 +(void)showIndicatorInView:(UIView *_Nullable)supperView indicatorViewStyle:(BHudIndicatorViewStyle )indicatorViewStyle;
-
-+(void)showInView:(UIView *_Nullable)supperView indicatorViewStyle:(BHudIndicatorViewStyle )indicatorViewStyle hudType:(BHudContentViewType)hudType indicatorProportion:(float)indicatorProportion;
 
 
 +(void)showErrorInView:(UIView *_Nullable)supperView clickBlock:(LuosFailBtnClickBlock _Nullable )clickBlock;
@@ -36,5 +35,8 @@ typedef void(^LuosFailBtnClickBlock)();
 +(void)showCustomHudView:(UIView *_Nullable)view InView:(UIView *_Nullable)supperView;
 
 
++(void)showCircleHudInView:(UIView *_Nullable)supperView indicatorViewColor:(UIColor *_Nullable)indicatorViewColor;
+
++(void)showCircleIndicatorInView:(UIView *_Nullable)supperView indicatorViewColor:(UIColor *_Nullable)indicatorViewColor;
 
 @end

@@ -31,12 +31,11 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        _indicatorProportion = 0.4;
 //        [self setIndicatorViewStyle:BHudCircleLoadingIndicatorView];
         
         _label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0,self.frame.size.width, 30)];
         _label.textAlignment = NSTextAlignmentCenter;
-        _label.text = @"加载中";
+        _label.text = @"loading";
 //        [_label addStrokeEndAnimation];
 //        [_label addOpacityAnimation];
         [_label addOpacityAnimation];
@@ -90,14 +89,19 @@
 -(void)layoutSubviews{
     
     
-    self.indicatorView.frame = CGRectMake(self.frame.size.width*0.5-25, self.frame.size.height*_indicatorProportion-50, 50, 50);
-    self.label.frame = CGRectMake(0, self.frame.size.height*_indicatorProportion,self.frame.size.width, 30);
+    self.indicatorView.frame = CGRectMake(self.frame.size.width*0.5-25, self.frame.size.height*0.5-50, 50, 50);
+    self.label.frame = CGRectMake(0, self.frame.size.height*0.5,self.frame.size.width, 30);
     
     
-    self.faildImageView.frame  = CGRectMake(self.frame.size.width*0.5-25, self.frame.size.height*_indicatorProportion-60, 50, 50);
-    self.faildBtn.frame = CGRectMake((self.frame.size.width-100)/2, self.frame.size.height*_indicatorProportion,100, 25);
+    self.faildImageView.frame  = CGRectMake(self.frame.size.width*0.5-25, self.frame.size.height*0.5-60, 50, 50);
+    self.faildBtn.frame = CGRectMake((self.frame.size.width-100)/2, self.frame.size.height*0.5,100, 25);
     
     
+}
+
+-(void)setCircleIndicatorViewColor:(UIColor *)circleIndicatorViewColor{
+    _circleIndicatorViewColor = circleIndicatorViewColor;
+    [self setIndicatorViewStyle:_indicatorViewStyle];
 }
 
 -(void)setIndicatorViewStyle:(BHudIndicatorViewStyle)indicatorViewStyle{
@@ -116,6 +120,9 @@
         case BHudCircleLoadingIndicatorView:
         {
             _indicatorView = [BCircleLoadingView new];
+            if (_circleIndicatorViewColor) {
+                ((BCircleLoadingView *)_indicatorView).bHUDForegroundColor = _circleIndicatorViewColor;
+            }
             [self addSubview:_indicatorView];
             break;
         }

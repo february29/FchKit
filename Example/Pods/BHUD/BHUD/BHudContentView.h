@@ -50,15 +50,15 @@ typedef void(^BContentViewFailBtnClickBlock)();
 
 
 /**
- 自定义样式
+ 设置circleIndicatorViewColor的样式，
  */
-@property (nonatomic,strong) UIView * _Nonnull customView;
+@property (nonatomic,strong) UIColor * _Nullable circleIndicatorViewColor;
 
 
 /**
- indicator 在父视图中距离父视图上边距比例。默认0.4
+ 自定义样式
  */
-@property (nonatomic,assign) float indicatorProportion;
+@property (nonatomic,strong) UIView * _Nonnull customView;
 
 
 //- (instancetype _Nonnull )initWithIndicatorViewStyle:(BHudIndicatorViewStyle) indicatorViewStyle;

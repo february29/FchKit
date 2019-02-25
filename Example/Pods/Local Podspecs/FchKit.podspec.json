@@ -1,9 +1,9 @@
 {
   "name": "FchKit",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "summary": "A short description of FchKit.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "http://10.10.1.1/git/FchKit",
+  "homepage": "https://github.com/february29/FchKit",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,8 +12,8 @@
     "february29": "baiyahui@fchsoft.com"
   },
   "source": {
-    "git": "http://10.10.1.1/git/FchKit.git",
-    "tag": "0.2.1"
+    "git": "https://github.com/february29/FchKit.git",
+    "tag": "0.2.2"
   },
   "platforms": {
     "ios": "8.0"
@@ -55,6 +55,9 @@
         "Masonry": [
 
         ],
+        "BHUD": [
+
+        ],
         "BlocksKit": [
 
         ]
@@ -76,10 +79,6 @@
         {
           "name": "BaseClass",
           "source_files": "FchKit/Classes/FchOCKit/BaseClass/**/*"
-        },
-        {
-          "name": "BHUD",
-          "source_files": "FchKit/Classes/FchOCKit/BHUD/**/*"
         },
         {
           "name": "CommenLib",

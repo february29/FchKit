@@ -1,7 +1,7 @@
 CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/FchKit
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking" "${PODS_CONFIGURATION_BUILD_DIR}/BAlert" "${PODS_CONFIGURATION_BUILD_DIR}/BlocksKit" "${PODS_CONFIGURATION_BUILD_DIR}/Masonry" "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage" "${PODS_CONFIGURATION_BUILD_DIR}/SnapKit"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking" "${PODS_CONFIGURATION_BUILD_DIR}/BAlert" "${PODS_CONFIGURATION_BUILD_DIR}/BHUD" "${PODS_CONFIGURATION_BUILD_DIR}/BlocksKit" "${PODS_CONFIGURATION_BUILD_DIR}/Masonry" "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage" "${PODS_CONFIGURATION_BUILD_DIR}/SnapKit"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-OTHER_LDFLAGS = $(inherited) -framework "AFNetworking" -framework "BAlert" -framework "BlocksKit" -framework "CoreGraphics" -framework "Foundation" -framework "ImageIO" -framework "Masonry" -framework "MessageUI" -framework "MobileCoreServices" -framework "SDWebImage" -framework "Security" -framework "SnapKit" -framework "SystemConfiguration" -framework "UIKit"
+OTHER_LDFLAGS = $(inherited) -framework "AFNetworking" -framework "BAlert" -framework "BHUD" -framework "BlocksKit" -framework "CoreGraphics" -framework "Foundation" -framework "ImageIO" -framework "Masonry" -framework "MessageUI" -framework "MobileCoreServices" -framework "SDWebImage" -framework "Security" -framework "SnapKit" -framework "SystemConfiguration" -framework "UIKit"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
