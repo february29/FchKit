@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - Alamofire (4.8.1)
   - BAlert (0.1.2)
   - BHUD (1.0.1)
   - BlocksKit (2.2.5):
@@ -31,63 +32,71 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
-  - FchKit (0.2.2):
-    - FchKit/FchOCKit (= 0.2.2)
-    - FchKit/FchSwiftKit (= 0.2.2)
-  - FchKit/FchOCKit (0.2.2):
+  - FchKit (0.2.3):
+    - FchKit/FchOCKit (= 0.2.3)
+    - FchKit/FchSwiftKit (= 0.2.3)
+  - FchKit/FchOCKit (0.2.3):
     - BHUD
     - BlocksKit
-    - FchKit/FchOCKit/BaseClass (= 0.2.2)
-    - FchKit/FchOCKit/BNetWorking (= 0.2.2)
-    - FchKit/FchOCKit/BToolKit (= 0.2.2)
-    - FchKit/FchOCKit/CommenLib (= 0.2.2)
-    - FchKit/FchOCKit/CommenViews (= 0.2.2)
+    - FchKit/FchOCKit/BaseClass (= 0.2.3)
+    - FchKit/FchOCKit/BNetWorking (= 0.2.3)
+    - FchKit/FchOCKit/BToolKit (= 0.2.3)
+    - FchKit/FchOCKit/CommenLib (= 0.2.3)
+    - FchKit/FchOCKit/CommenViews (= 0.2.3)
     - Masonry
-  - FchKit/FchOCKit/BaseClass (0.2.2):
+  - FchKit/FchOCKit/BaseClass (0.2.3):
     - BHUD
     - BlocksKit
     - Masonry
-  - FchKit/FchOCKit/BNetWorking (0.2.2):
+  - FchKit/FchOCKit/BNetWorking (0.2.3):
     - AFNetworking
     - BHUD
     - BlocksKit
     - Masonry
-  - FchKit/FchOCKit/BToolKit (0.2.2):
+  - FchKit/FchOCKit/BToolKit (0.2.3):
     - BHUD
     - BlocksKit
     - Masonry
-  - FchKit/FchOCKit/CommenLib (0.2.2):
-    - BHUD
-    - BlocksKit
-    - Masonry
-    - SDWebImage
-  - FchKit/FchOCKit/CommenViews (0.2.2):
+  - FchKit/FchOCKit/CommenLib (0.2.3):
     - BHUD
     - BlocksKit
     - Masonry
     - SDWebImage
-  - FchKit/FchSwiftKit (0.2.2):
+  - FchKit/FchOCKit/CommenViews (0.2.3):
+    - BHUD
+    - BlocksKit
+    - Masonry
+    - SDWebImage
+  - FchKit/FchSwiftKit (0.2.3):
     - BAlert
-    - FchKit/FchSwiftKit/Adapter (= 0.2.2)
-    - FchKit/FchSwiftKit/BBaseClass (= 0.2.2)
-    - FchKit/FchSwiftKit/BTools (= 0.2.2)
-    - FchKit/FchSwiftKit/CommonViews (= 0.2.2)
+    - FchKit/FchSwiftKit/Adapter (= 0.2.3)
+    - FchKit/FchSwiftKit/BBaseClass (= 0.2.3)
+    - FchKit/FchSwiftKit/BNetWorking (= 0.2.3)
+    - FchKit/FchSwiftKit/BTools (= 0.2.3)
+    - FchKit/FchSwiftKit/CommonViews (= 0.2.3)
     - SnapKit
-  - FchKit/FchSwiftKit/Adapter (0.2.2):
-    - BAlert
-    - SnapKit
-  - FchKit/FchSwiftKit/BBaseClass (0.2.2):
-    - BAlert
-    - SnapKit
-  - FchKit/FchSwiftKit/BTools (0.2.2):
-    - BAlert
-    - SnapKit
-  - FchKit/FchSwiftKit/CommonViews (0.2.2):
+  - FchKit/FchSwiftKit/Adapter (0.2.3):
     - BAlert
     - SnapKit
+  - FchKit/FchSwiftKit/BBaseClass (0.2.3):
+    - BAlert
+    - SnapKit
+  - FchKit/FchSwiftKit/BNetWorking (0.2.3):
+    - Alamofire
+    - BAlert
+    - HandyJSON
+    - RxSwift
+    - SnapKit
+  - FchKit/FchSwiftKit/BTools (0.2.3):
+    - BAlert
+    - SnapKit
+  - FchKit/FchSwiftKit/CommonViews (0.2.3):
+    - BAlert
+    - SnapKit
+  - HandyJSON (4.2.1)
   - Masonry (1.1.0)
   - RxAtomic (4.4.0)
-  - RxCocoa (4.4.0):
+  - RxCocoa (4.4.1):
     - RxSwift (~> 4.0)
   - RxSwift (4.4.0):
     - RxAtomic (~> 4.4)
@@ -103,9 +112,11 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - Alamofire
     - BAlert
     - BHUD
     - BlocksKit
+    - HandyJSON
     - Masonry
     - RxAtomic
     - RxCocoa
@@ -119,13 +130,15 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   BAlert: 1be1f3586f0b70c34fa92ce9c584551d4a3b26ee
   BHUD: 136585d7fb559681ed04538c504006c917400821
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
-  FchKit: cd1bb27de3c7061be60709793987ac556402612b
+  FchKit: d913cbe28637011d58cec21d121c08cc3231c15d
+  HandyJSON: d0c5fc80204f29056d59d3e5c4587fa0b16b60a8
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
-  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
+  RxCocoa: 2f35a76bf8887872e28a1914112395b11b8e0e64
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a

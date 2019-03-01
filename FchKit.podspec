@@ -54,6 +54,15 @@ TODO: Add long description of the pod here.
         sss.source_files = 'FchKit/Classes/FchSwiftKit/CommonViews/**/*'
         
     end
+    
+    ss.subspec 'BNetWorking' do |sss|
+        sss.source_files = 'FchKit/Classes/FchSwiftKit/BNetWorking/**/*'
+        
+        sss.dependency 'Alamofire'
+        sss.dependency 'HandyJSON'
+        sss.dependency 'RxSwift'
+        
+    end
 
     ss.dependency 'SnapKit'
     ss.dependency 'BAlert'

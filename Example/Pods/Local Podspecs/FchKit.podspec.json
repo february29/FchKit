@@ -1,6 +1,6 @@
 {
   "name": "FchKit",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "summary": "A short description of FchKit.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/february29/FchKit",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/february29/FchKit.git",
-    "tag": "0.2.2"
+    "tag": "0.2.3"
   },
   "platforms": {
     "ios": "8.0"
@@ -46,6 +46,21 @@
         {
           "name": "CommonViews",
           "source_files": "FchKit/Classes/FchSwiftKit/CommonViews/**/*"
+        },
+        {
+          "name": "BNetWorking",
+          "source_files": "FchKit/Classes/FchSwiftKit/BNetWorking/**/*",
+          "dependencies": {
+            "Alamofire": [
+
+            ],
+            "HandyJSON": [
+
+            ],
+            "RxSwift": [
+
+            ]
+          }
         }
       ]
     },
