@@ -61,6 +61,8 @@
 #import "SDPhotoBrowserConfig.h"
 #import "SDWaitingView.h"
 #import "BImageAddContentView.h"
+#import "BTsAndInfoView.h"
+#import "InsertsSpaceTextField.h"
 
 FOUNDATION_EXPORT double FchKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char FchKitVersionString[];
