@@ -1,6 +1,0 @@
-framework module BHUD {
-  umbrella header "BHUD-umbrella.h"
-
-  export *
-  module * { export * }
-}

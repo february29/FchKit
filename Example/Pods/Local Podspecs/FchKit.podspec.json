@@ -49,15 +49,9 @@
         },
         {
           "name": "BNetWorking",
-          "source_files": "FchKit/Classes/FchSwiftKit/BNetWorking/**/*",
+          "source_files": "FchKit/Classes/FchSwiftKit/BNetWorking/BAlamofireManager.swift",
           "dependencies": {
             "Alamofire": [
-
-            ],
-            "HandyJSON": [
-
-            ],
-            "RxSwift": [
 
             ]
           }
@@ -68,9 +62,6 @@
       "name": "FchOCKit",
       "dependencies": {
         "Masonry": [
-
-        ],
-        "BHUD": [
 
         ],
         "BlocksKit": [
@@ -96,22 +87,8 @@
           "source_files": "FchKit/Classes/FchOCKit/BaseClass/**/*"
         },
         {
-          "name": "CommenLib",
-          "source_files": "FchKit/Classes/FchOCKit/CommenLib/**/*",
-          "dependencies": {
-            "SDWebImage": [
-
-            ]
-          }
-        },
-        {
           "name": "CommenViews",
-          "source_files": "FchKit/Classes/FchOCKit/CommenViews/**/*",
-          "dependencies": {
-            "SDWebImage": [
-
-            ]
-          }
+          "source_files": "FchKit/Classes/FchOCKit/CommenViews/**/*"
         }
       ]
     }

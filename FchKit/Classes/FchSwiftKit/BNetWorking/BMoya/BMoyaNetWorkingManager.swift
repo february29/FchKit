@@ -8,10 +8,10 @@
 
 import UIKit
 //import Moya
-import RxSwift
+//import RxSwift
 
 
-class BMoyaNetWorkingManager: NSObject {
+class BMoyaManager: NSObject {
 
 
 //    static var shared: BMoyaNetWorkingManager {

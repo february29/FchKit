@@ -56,11 +56,11 @@ TODO: Add long description of the pod here.
     end
     
     ss.subspec 'BNetWorking' do |sss|
-        sss.source_files = 'FchKit/Classes/FchSwiftKit/BNetWorking/**/*'
+        sss.source_files = 'FchKit/Classes/FchSwiftKit/BNetWorking/BAlamofireManager.swift'
         
         sss.dependency 'Alamofire'
-        sss.dependency 'HandyJSON'
-        sss.dependency 'RxSwift'
+        # sss.dependency 'HandyJSON'
+        #sss.dependency 'RxSwift'
         
     end
 
@@ -101,16 +101,16 @@ TODO: Add long description of the pod here.
         
     # end
     
-    ss.subspec 'CommenLib' do |sss|
-      sss.source_files = 'FchKit/Classes/FchOCKit/CommenLib/**/*'
+    # ss.subspec 'CommenLib' do |sss|
+    # sss.source_files = 'FchKit/Classes/FchOCKit/CommenLib/**/*'
         
-      sss.dependency  'SDWebImage'
-    end
+        # sss.dependency  'SDWebImage'
+        #end
     
     ss.subspec 'CommenViews' do |sss|
       sss.source_files = 'FchKit/Classes/FchOCKit/CommenViews/**/*'
         
-      sss.dependency  'SDWebImage'
+        # sss.dependency  'SDWebImage'
     end
     
    
@@ -118,7 +118,7 @@ TODO: Add long description of the pod here.
     
     
     ss.dependency 'Masonry'
-    ss.dependency 'BHUD'
+    # ss.dependency 'BHUD'
     ss.dependency 'BlocksKit'
   end
  
